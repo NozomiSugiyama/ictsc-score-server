@@ -93,15 +93,12 @@ export default {
     refreshDate();
 
     // 30秒おきに、一時停止中か確認を行う
-    const checkCompetitionStop = () => setTimeout(
-      async () => {
-        const configs = await API.getConfigs();
-        this.isCompetitionStop = (configs.find(x => x.key === 'competition_stop') || {}).value === '0' ? false : true;
-        checkCompetitionStop();
-      },
-      30000
-    );
+    const checkCompetitionStop = async () => {
+      const configs = await API.getConfigs();
+      this.isCompetitionStop = (configs.find(x => x.key === 'competition_stop') || {}).value === '0' ? false : true;
+    };
     checkCompetitionStop();
+    setInterval(() => checkCompetitionStop(), 30000);
 
     setInterval(() => {
       this.asyncReload();
