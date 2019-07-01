@@ -1,51 +1,22 @@
-# web starter kit
+# ictsc-score-server UI
 
 ## Getting Started
-### Prerequisites
 
+## Development
+### Generate GraphQL Code
 ```bash
-$ yarn -v
-1.7.0
-
-$ node -v
-v10.9.0
+$ yarn graphql-code-generate
 ```
-
-### Development
-
-#### Setup
-```bash
-$ yarn
-```
-
-#### Debug
-```bash
-$ yarn
-
-$ yarn start
-```
-
-### Deploy
-
-
-##### Develop
-###### Editor setup
+#### Editor setup
 https://github.com/styled-components/vscode-styled-components
 
-##### Deploy
-```bash
-$ yarn deploy
-or
-$ yarn deploy --profile PROFILE_NAME
-```
-
-#### file size analyze
-##### cmd
+## file size analyze
+### cmd
 ```bash
 $ yarn size-analyze
 ```
 
-##### web-view
+### web-view
 uncomment `// new BundleAnalyzerPlugin()` in `webpack.config.(dev|prod).js`
 ```js
 ...
@@ -60,7 +31,7 @@ uncomment `// new BundleAnalyzerPlugin()` in `webpack.config.(dev|prod).js`
 ...
 ```
 
-#### Generate Documents
+## Generate Documents
 ```bash
 $ yarn docs
 ```
